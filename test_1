@@ -1,0 +1,6 @@
+#Test from main_test1
+#All valid transaction test
+
+python3 main_test1.py
+{'Valid': [<Transaction.Transaction object at 0x7f297c5ea860>, <Transaction.Transaction object at 0x7f297c5ea940>, <Transaction.Transaction object at 0x7f297c5ea9e8>, <Transaction.Transaction object at 0x7f297c5eaac8>, <Transaction.Transaction object at 0x7f297c5eab70>, <Transaction.Transaction object at 0x7f297c5eac88>, <Transaction.Transaction object at 0x7f297c5ead68>], 'Invalid': []}
+

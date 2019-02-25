@@ -1,0 +1,6 @@
+#from main_test2
+#Test for random utxo tx input selection, have probability of multiple claim of same utxos by the same transaction or between different transactions
+
+python3 main_test2.py
+{'Valid': [<Transaction.Transaction object at 0x7f5e742da7b8>, <Transaction.Transaction object at 0x7f5e742da908>, <Transaction.Transaction object at 0x7f5e742da9e8>, <Transaction.Transaction object at 0x7f5e742dab38>], 'Invalid': [<Transaction.Transaction object at 0x7f5e742da6a0>, <Transaction.Transaction object at 0x7f5e742daac8>, <Transaction.Transaction object at 0x7f5e742dabe0>]}
+
