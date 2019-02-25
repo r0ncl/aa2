@@ -100,5 +100,5 @@ class Transaction:
             return self.outputs[index]
         return None
     
-    def getOutputs():
+    def getOutputs(self):
         return self.outputs
