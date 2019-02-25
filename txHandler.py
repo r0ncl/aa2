@@ -91,4 +91,3 @@ class txHandler:
     return {'Valid':validTxs, 'Invalid':invalidTxs}
 
 
-
