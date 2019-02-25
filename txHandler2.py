@@ -39,7 +39,7 @@ class txHandler:
         if tsUtxo in existUtxo:
           return False
         
-        elif not verify(i.signature, self.utxoPool.getTxOutput(tsUtxo).address, tx.getRawDataToSign(index) ,g, q):
+        elif not verify(i.signature, self.utxoPool.getTxOutput(tsUtxo).address, dg ,g, q):
           return False
         
         existUtxo.append(tsUtxo)
