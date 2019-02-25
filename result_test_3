@@ -1,0 +1,9 @@
+#from main_test3
+#Test for 1 key signature error, resulting only 1 invalid transaction
+
+python3 main_test3.py
+{'Valid': [<Transaction.Transaction object at 0x7fb8e5b0d780>, <Transaction.Transaction object at 0x7fb8e5b0d8d0>, 
+<Transaction.Transaction object at 0x7fb8e5b0d9e8>, <Transaction.Transaction object at 0x7fb8e5b0dac8>, 
+<Transaction.Transaction object at 0x7fb8e5b0dba8>, <Transaction.Transaction object at 0x7fb8e5b0dcc0>], 'Invalid': 
+[<Transaction.Transaction object at 0x7fb8e5b0d668>]}
+
