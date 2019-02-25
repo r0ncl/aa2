@@ -9,7 +9,7 @@ class UTXOPool:
         self.H[utxo] = txOut
     
     def remove(self, utxo):
-         self.H.remove(utxo)
+         del self.H[utxo]
 
     def getTxOutput(self, ut):
         return self.H.get(ut);
