@@ -35,14 +35,14 @@ class Transaction:
         op = self.Output(value, address)
         self.outputs.append(op)
     
-    def removeInput(self, index):
+    def removeInputIndex(self, index):
         self.inputs.remove(index)
     
 
-    def removeInput(ut):
-        for u in inputs:
+    def removeInput(self, ut):
+        for u in self.inputs:
             if (u.equals(ut)):
-                inputs.remove(u)
+                self.inputs.remove(u)
             
 
     def getRawDataToSign(self, index):
