@@ -39,10 +39,10 @@ class Transaction:
         self.inputs.remove(index)
     
 
-    def removeInput(ut):
-        for u in inputs:
+    def removeInput(self, ut):
+        for u in self.inputs:
             if (u.equals(ut)):
-                inputs.remove(u)
+                self.inputs.remove(u)
             
 
     def getRawDataToSign(self, index):
