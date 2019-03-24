@@ -1,7 +1,7 @@
 from Encodings import encode
 import hashlib
 
-# only approved txs by txHandler continues encodeCatx() interface
+# only approved txs by txHandler continues encodeCatx() interface to encode current tx
 # encodeCatx() defined below encodes all pks for scripSig and script
 # only the small set of scripts P2PKH, P2PT, P2UCS, P2HS in example is allowed in encodeCatx() interface
 class Catx:
@@ -60,6 +60,9 @@ class Catx:
           scriptStr=i.script.values()[0].split()
           scriptStr[2]=str(addresses[i+2])
           i.script[key]=' '.join(scriptStr)
+        
+        #return encoded base58 pk address of output
+        return self.address
 
 
     def addInput(self, prevTxHash, outputIndex):
