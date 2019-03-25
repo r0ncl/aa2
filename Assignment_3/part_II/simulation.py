@@ -68,9 +68,9 @@ def main(args):
 
                    if (j not in allProposals):
                        candidates = {}
-                       allProposals.put(j, candidates)
-            candidate = Candidate(tx, i)
-            allProposals.get(j).add(candidate)
+                       allProposals.update(j = [candidates])
+                   candidate = Candidate(tx, i)
+                   allProposals.get(j).append(candidate)
                
 ##         // Distribute the Proposals to their intended recipients as Candidates
          for i in range(numNodes):
