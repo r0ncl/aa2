@@ -31,9 +31,9 @@ def main(args):
 
 ##      // initialize a set of 500 valid Transactions with random ids
     numTx = 500
-    validTxIds = {}
+    validTxIds = []
     for i in range(numTx):
-         validTxIds.add(random.randint(1000,50000))
+         validTxIds.append(random.randint(1000,50000))
       
 
 ##
@@ -42,9 +42,10 @@ def main(args):
 ##      // is random with probability p_txDistribution for each Transaction-Node pair.
 
     for i in range(numNodes):
+        prendingTransactions = []
         for txid in validTxIds:
           if (random.random() < p_txDistribution): #// p_txDistribution is .01, .05, or .10.
-                     pendingTransactions.add(Transaction(txid))
+                     pendingTransactions.append(Transaction(txid))
          
         nodes[i].setPendingTransaction(pendingTransactions)
 
@@ -67,8 +68,9 @@ def main(args):
                        break #continue; // tx only matters if j follows i
 
                    if (j not in allProposals):
-                       candidates = {}
-                       allProposals.update(j = [candidates])
+                       candidates = []
+                       allProposals.update(j = candidates)
+                    
                    candidate = Candidate(tx, i)
                    allProposals.get(j).append(candidate)
                
