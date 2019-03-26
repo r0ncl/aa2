@@ -25,7 +25,8 @@ class CompliantNode(Node):
 
   def receiveFromFollowees(self, candidateList):
     candidateFollowees = [i.sender for i in candidateList]
-    maliciousTrue = [ [i and i not in candidateFollowees] for i in self.followees]
+    pairs = zip(self.followees, range(len(self.followees)))
+    maliciousTrue = [i and k not in candidateFollowees for i,k in pairs]
     self.pendingTx = [None if maliciousTrue[i.sender] else i.tx for i in candidateList]
     self.pendingTx = list(set(self.pendingTx)).remove(None)
 
