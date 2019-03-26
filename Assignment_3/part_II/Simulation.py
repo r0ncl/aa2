@@ -4,15 +4,14 @@ from MaliciousNode import MaliciousNode
 from Transaction import Transaction # not used, tx just id
 from Candidate import Candidate
 
-def main(args):
-##
+def main(*args):
 ##
 ##      // There are four required command line arguments: p_graph (.1, .2, .3),
 ##      // p_malicious (.15, .30, .45), p_txDistribution (.01, .05, .10), 
 ##      // and numRounds (10, 20). You should try to test your CompliantNode
 ##      // code for all 3x3x3x2 = 54 combinations.
 ## 
-    numNodes = 100;
+    numNodes = 10;
     p_graph = args[0] # // parameter for random graph: prob. that an edge will exist
     p_malicious = args[1] # // prob. that a node will be set to be malicious
     p_txDistribution = args[2]  #// probability of assigning an initial transaction to each node 
@@ -33,7 +32,7 @@ def main(args):
          nodes[i].setFollowees(followees[i]);
 
 ##      // initialize a set of 500 valid Transactions with random ids
-    numTx = 500
+    numTx = 50
     validTxIds = []
     for i in range(numTx):
          validTxIds.append(random.randint(1000,50000))
@@ -45,15 +44,15 @@ def main(args):
 ##      // is random with probability p_txDistribution for each Transaction-Node pair.
 
     for i in range(numNodes):
-        pendingTransactions = []
+        pendingTransactions = [Transaction(1)] #distinguish from malicious node
         for txid in validTxIds:
           if (random.random() < p_txDistribution): #// p_txDistribution is .01, .05, or .10.
-                     pendingTransactions.append(Transaction(txid))
+              pendingTransactions.append(Transaction(txid))
          
         nodes[i].setPendingTransaction(pendingTransactions)
 
 
-    for round in range(numRounds):
+    for r in range(numRounds):
 ##         // gather all the proposals into a map. The key is the index of the node receiving
 ##         // proposals. The value is an List containing pairs. The first
 ##         // element is the id of the transaction being proposed and the second
@@ -64,7 +63,7 @@ def main(args):
             proposals = nodes[i].sendToFollowers()
             if proposals != None:
                 for tx in proposals:
-                   if (tx not in validTxIds):
+                   if (tx.id not in validTxIds):
                       break  #// ensure that each tx is actually valid
 
                    for j in range(numNodes):
@@ -73,7 +72,7 @@ def main(args):
 
                        if (j not in allProposals):
                            candidates = []
-                           allProposals.update(j = candidates)
+                           allProposals[j] = candidates
 
                        candidate = Candidate(tx, i)
                        allProposals.get(j).append(candidate)
@@ -88,7 +87,9 @@ def main(args):
  #     // print results
     for i in range(numNodes):
          transactions = nodes[i].sendToFollowers()
-         print("Transaction ids that Node " + i + " believes consensus on:")
-         for tx in transactions:
+         print("Transaction ids that Node " + str(i) + " believes consensus on:")
+         if transactions != None:
+           for tx in transactions:
              print(tx.id, "\n\n")
+    
 
