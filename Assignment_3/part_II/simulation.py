@@ -1,5 +1,8 @@
-
 import random
+from CompliantNode import CompliantNode
+from MaliciousNode import MaliciousNode
+from Transaction import Transaction # not used, tx just id
+from Candidate import Candidate
 
 def main(args):
 ##
