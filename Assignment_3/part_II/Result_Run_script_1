@@ -1,5 +1,5 @@
 # transactions contain id 1 as indication of Compliant Node, 
-# Malicious Node outputs to consensus by returning None from sendToFollowers()
+# no consensus either node only has malicious followees, or node is malicious designed by returning None from sendToFollowers()
 
 Transaction ids that Node 0 believes consensus on:
 1
