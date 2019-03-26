@@ -1,0 +1,98 @@
+# transactions contain id 1 as indication of Compliant Node, 
+# Malicious Node outputs to consensus by returning None from sendToFollowers()
+
+Transaction ids that Node 0 believes consensus on:
+Transaction ids that Node 1 believes consensus on:
+1
+
+
+25753
+
+
+7541
+
+
+25301
+
+
+Transaction ids that Node 2 believes consensus on:
+1
+
+
+29864
+
+
+7007
+
+
+37247
+
+
+Transaction ids that Node 3 believes consensus on:
+1
+
+
+7007
+
+
+25408
+
+
+32030
+
+
+Transaction ids that Node 4 believes consensus on:
+Transaction ids that Node 5 believes consensus on:
+Transaction ids that Node 6 believes consensus on:
+1
+
+
+25608
+
+
+2619
+
+
+Transaction ids that Node 7 believes consensus on:
+1
+
+
+25301
+
+
+Transaction ids that Node 8 believes consensus on:
+1
+
+
+9726
+
+
+16065
+
+
+7200
+
+
+25753
+
+
+25301
+
+
+Transaction ids that Node 9 believes consensus on:
+1
+
+
+29961
+
+
+33736
+
+
+9726
+
+
+43991
+
+
+10354
