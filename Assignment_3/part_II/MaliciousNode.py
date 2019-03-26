@@ -1,24 +1,28 @@
-class Transaction ():
+from Node import Node
+
+class MaliciousNode(Node):
+
+  def __init__(self, p_graph, p_malicious, p_txDistribution, numRounds):
+        pass
 
 
-    def __init__(self, id):
-        self.id = id;
-    
-
-    def equals(self, obj):
-        if (obj == None):
-            return False
+  def setFollowees(self, followees):
+        pass
         
-        if (type(self) != type(obj)):
-            return False
-        
-        other = obj
-        if (self.id != other.id):
-            return False
-        
-        return True
-    
 
-    def hashCode(self):
-        return self.id
 
+  
+  def setPendingTx(self, pendingTx):
+        pass
+
+
+  def sendToFollowers(self):
+        pass
+
+
+  def receiveFromFollowees(self, candidateList):
+        pass
+
+
+
+  
