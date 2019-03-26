@@ -15,7 +15,7 @@ class MaliciousNode(Node):
 
 
   def sendToFollowers(self):
-        pass
+        return None
 
 
   def receiveFromFollowees(self, candidateList):
