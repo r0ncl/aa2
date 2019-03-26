@@ -9,8 +9,6 @@ class MaliciousNode(Node):
   def setFollowees(self, followees):
         pass
         
-
-
   
   def setPendingTx(self, pendingTx):
         pass
