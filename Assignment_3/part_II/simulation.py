@@ -62,20 +62,21 @@ def main(args):
 
          for i in range(numNodes):
             proposals = nodes[i].sendToFollowers()
-            for tx in proposals:
-               if (tx not in validTxIds):
-                  break  #// ensure that each tx is actually valid
+            if proposals != None:
+                for tx in proposals:
+                   if (tx not in validTxIds):
+                      break  #// ensure that each tx is actually valid
 
-               for j in range(numNodes):
-                   if (not followees[j][i]):
-                       break #continue; // tx only matters if j follows i
+                   for j in range(numNodes):
+                       if (not followees[j][i]):
+                           break #continue; // tx only matters if j follows i
 
-                   if (j not in allProposals):
-                       candidates = []
-                       allProposals.update(j = candidates)
-                    
-                   candidate = Candidate(tx, i)
-                   allProposals.get(j).append(candidate)
+                       if (j not in allProposals):
+                           candidates = []
+                           allProposals.update(j = candidates)
+
+                       candidate = Candidate(tx, i)
+                       allProposals.get(j).append(candidate)
                
 ##         // Distribute the Proposals to their intended recipients as Candidates
          for i in range(numNodes):
