@@ -1,8 +1,8 @@
 from Node import Node
 
 class CompliantNode(Node):
-  self.followees = []
-  self.pendingTx = []
+  followees = []
+  pendingTx = []
 
   def __init__(self, p_graph, p_malicious, p_txDistribution, numRounds):
     self.p_graph = p_graph
