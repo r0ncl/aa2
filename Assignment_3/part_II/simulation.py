@@ -24,7 +24,7 @@ def main(args):
          if(random.random() < p_malicious):
  #           // When you are ready to try testing with malicious nodes, replace the
  #           // instantiation below with an instantiation of a MaliciousNode
-            nodes[i] = MalDoNothing(p_graph, p_malicious, p_txDistribution, numRounds)
+            nodes[i] = MaliciousNode(p_graph, p_malicious, p_txDistribution, numRounds)
          else:
             nodes[i] = CompliantNode(p_graph, p_malicious, p_txDistribution, numRounds)
     
@@ -45,7 +45,7 @@ def main(args):
 ##      // is random with probability p_txDistribution for each Transaction-Node pair.
 
     for i in range(numNodes):
-        prendingTransactions = []
+        pendingTransactions = []
         for txid in validTxIds:
           if (random.random() < p_txDistribution): #// p_txDistribution is .01, .05, or .10.
                      pendingTransactions.append(Transaction(txid))
