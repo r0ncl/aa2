@@ -1,4 +1,4 @@
-# transactions contain id 1 as indication of Compliant Node, 
+# transactions contain id 1 as tx sent by of Compliant Node, 
 # no consensus either node only has malicious followees, or node is malicious designed by returning None from sendToFollowers()
 
 
